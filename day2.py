@@ -16,8 +16,8 @@ def readFile():
         if int(range1[0]) <= count <= int(range2[0]):
             matches_part1 = matches_part1 + 1
         # Part 2
-        var1 = value[int(range1[0])-1]
-        var2 = (value[int(range2[0])-1])
+        var1 = value[int(range1[0]) - 1]
+        var2 = (value[int(range2[0]) - 1])
         if (var1 == criteria[0]) ^ (var2 == criteria[0]):
             matches_part2 = matches_part2 + 1
 
