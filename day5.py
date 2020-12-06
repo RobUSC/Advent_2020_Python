@@ -1,8 +1,8 @@
 def calc_pos(line, idx, op, hi, lo):
     mid = int((hi + lo) / 2)
-    if op == 'B' or op == 'R':
+    if op in 'BR':
         lo = mid + 1
-    if op == 'F' or op == 'L':
+    if op in 'FL':
         hi = mid
     if hi == lo:
         return hi
@@ -21,9 +21,7 @@ file = open('./inputs/day5.txt', 'r')
 max_seat = 0
 seats = {}
 for line in file:
-    var1 = int(calc_pos(line, 0, line[0], 127, 0))
-    var2 = int(calc_pos(line, 7, line[7], 7, 0))
-    var3 = (var1 * 8 + var2)
+    var3 = (int(calc_pos(line, 0, line[0], 127, 0)) * 8 + int(calc_pos(line, 7, line[7], 7, 0)))
     seats[var3] = var3
     if max_seat < var3:
         max_seat = var3
