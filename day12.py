@@ -1,6 +1,3 @@
-import regex as re
-
-
 def turn_90_degrees(dir, heading):
     if heading == 'L':
         if dir == 'E':
@@ -30,7 +27,6 @@ def rotate_waypoint_90_degrees(waypoint, heading):
 
 
 with open('./inputs/day12.txt', 'r') as input:
-    # input = ['F10', 'N3', 'F7', 'R90', 'F11']  # sample data
     turns = ['L', 'R']
     position = {'E': 0, 'S': 0, 'W': 0, 'N': 0}
     direction = 'E'
@@ -62,12 +58,6 @@ with open('./inputs/day12.txt', 'r') as input:
             if var == 'S':
                 position['S'] += int(line[1:])
                 waypoint[1] -= int(line[1:])
-        print('Turn', index + 1, '-----------')
-        print('WP', waypoint)
-        print('PP', planar_position)
-        print('-----------')
 
     print('Part 1', abs((position.get('E') - position.get('W'))) + abs((position.get('N') - position.get('S'))))
-    print('Part 2 PP', planar_position)
-    print('Part 2 WP', waypoint)
-    print('Manhattan Distance', abs(planar_position[0]) + abs(planar_position[1]))
+    print('Part 2', abs(planar_position[0]) + abs(planar_position[1]))
